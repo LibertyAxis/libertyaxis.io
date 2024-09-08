@@ -124,7 +124,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -150,7 +150,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -176,7 +176,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -228,7 +228,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -358,7 +358,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -384,7 +384,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -419,11 +419,11 @@ var questions = [
         "question": "It’s important to personally support and honor the military's role in defending the country?",
         "points": {
             "yes": {
-                "x": -1,
+                "x": 1,
                 "y": 0
             },
             "no": {
-                "x": 1,
+                "x": -1,
                 "y": 0
             }
         },
@@ -436,7 +436,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
@@ -445,11 +445,11 @@ var questions = [
         "question": "Combating threats like terrorism and pedophilia is more important than ensuring personal privacy?",
         "points": {
             "yes": {
-                "x": -1,
+                "x": 1,
                 "y": 0
             },
             "no": {
-                "x": 1,
+                "x": -1,
                 "y": 0
             }
         },
@@ -462,7 +462,7 @@ var questions = [
                 },
                 "no": {
                     "x": 0,
-                    "y": -1
+                    "y": 0
                 }
             }
         }
