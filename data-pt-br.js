@@ -1,4 +1,4 @@
-var questions = [
+var questionspt = [
   {
     "question": "Os indivíduos deveriam ter a liberdade de usar e experimentar drogas se assim o desejarem?",
     "points": {
@@ -26,7 +26,7 @@ var questions = [
     }
   },
   {
-    "question": "Os indivíduos têm o direito de escolher se querem fazer um aborto com base nas suas circunstâncias pessoais?",
+    "question": "Os indivíduos têm o direito de escolher se querem fazer um aborto?",
     "points": {
       "yes": {
         "x": -1,
@@ -78,7 +78,7 @@ var questions = [
     }
   },
   {
-    "question": "A imparcialidade e a justiça devem ser mantidas em disputas e acusações pessoais, garantindo tratamento igual para todas as partes?",
+    "question": "A imparcialidade e a justiça devem ser mantidas em disputas e acusações pessoais, garantindo tratamento igual para todas as partes, mesmo para criminosos conhecidos, e também sem pena de morte?",
     "points": {
       "yes": {
         "x": -1,
@@ -91,7 +91,7 @@ var questions = [
     }
   },
   {
-    "question": "Dada a sua posição, o governo deveria fazer cumprir e manter o sistema de justiça?",
+    "question": "Deveria o governo ser responsável pela manutenção e aplicação do sistema de justiça, com base na sua opinião anterior sobre imparcialidade e justiça?",
     "points": {
       "yes": {
         "x": 0,
@@ -130,7 +130,7 @@ var questions = [
     }
   },
   {
-    "question": "A sociedade deveria tomar medidas activas para abordar a desigualdade racial e apoiar a diversidade nas comunidades ou nos locais de trabalho?",
+    "question": "Deveria a sociedade pressionar as empresas a adoptar quotas de diversidade e redireccionar recursos para programas sociais para abordar as desigualdades históricas e sociais?",
     "points": {
       "yes": {
         "x": -1,
@@ -142,7 +142,7 @@ var questions = [
       }
     },
     "subquestion": {
-      "question": "Deveria o governo ser responsável pela aplicação de medidas que garantam a igualdade e a diversidade racial?",
+      "question": "Deverá o governo obrigar as empresas a implementar quotas de diversidade e a redireccionar as receitas fiscais para financiar programas sociais destinados a abordar as desigualdades históricas e sociais?",
       "points": {
         "yes": {
           "x": 0,
@@ -156,7 +156,7 @@ var questions = [
     }
   },
   {
-    "question": "Aqueles que são mais ricos deveriam contribuir mais para as necessidades da sociedade?",
+    "question": "Aqueles que são mais ricos deveriam contribuir monetáriamente para as necessidades sociais?",
     "points": {
       "yes": {
         "x": -1,
@@ -195,7 +195,7 @@ var questions = [
     }
   },
   {
-    "question": "O governo deveria implementar leis que regulamentassem as cabanas?",
+    "question": "O governo deveria implementar leis que regulamentassem a caça?",
     "points": {
       "yes": {
         "x": 0,
@@ -208,7 +208,7 @@ var questions = [
     }
   },
   {
-    "question": "Os recursos policiais deveriam ser reduzidos e redirecionados para serviços comunitários como cuidados de saúde mental?",
+    "question": "Realocando recursos policiais para serviços comunitários direcionados, como programas de tratamento de abuso de substâncias.?",
     "points": {
       "yes": {
         "x": -1,
@@ -220,7 +220,7 @@ var questions = [
       }
     },
     "subquestion": {
-      "question": "Deverá o governo transferir o financiamento público do policiamento para serviços comunitários?",
+      "question": "Deveria o governo transferir o financiamento público do policiamento para serviços comunitários, como os Programas de Desenvolvimento Juvenil?",
       "points": {
         "yes": {
           "x": 0,
@@ -273,7 +273,7 @@ var questions = [
     }
   },
   {
-    "question": "O governo deveria ter alguma autoridade sobre a regulação da liberdade de expressão?",
+    "question": "O governo deveria ter alguma autoridade sobre a regulamentação da liberdade de expressão?",
     "points": {
       "yes": {
         "x": 0,
@@ -286,7 +286,7 @@ var questions = [
     }
   },
   {
-    "question": "Os pais deveriam ter o direito de educar os seus filhos em casa de acordo com os seus valores e crenças pessoais?",
+    "question": "Os pais deveriam ter o direito de educar os filhos em casa de acordo com seus valores e crenças pessoais?",
     "points": {
       "yes": {
         "x": 1,
@@ -403,7 +403,7 @@ var questions = [
     }
   },
   {
-    "question": "Deverá o governo permitir ou exigir a educação religiosa nas escolas ou instituições públicas?",
+    "question": "Deverá o governo negar ou exigir a educação religiosa nas escolas ou instituições públicas?",
     "points": {
       "yes": {
         "x": 0,

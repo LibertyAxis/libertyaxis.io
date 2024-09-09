@@ -45,6 +45,7 @@
             text-align: center;
         }
     </style>
+    <script src="data-pt-br.js"></script>
     <script src="data.js"></script>
 </head>
 
@@ -62,46 +63,59 @@
     </div>
 
     <script>
+        // English questions
         // const questions = [
         //     {
         //         "question": "Do you like ice cream?",
         //         "points": {
-        //             "yes": {"x": 0, "y": 10},
-        //             "no": {"x": 10, "y": 0}
+        //             "yes": { "x": 0, "y": 10 },
+        //             "no": { "x": 10, "y": 0 }
         //         },
         //         "subquestion": {
         //             "question": "Do you prefer chocolate flavor?",
         //             "points": {
-        //                 "yes": {"x": 0, "y": 10},
-        //             "no": {"x": 10, "y": 0}
+        //                 "yes": { "x": 0, "y": 10 },
+        //                 "no": { "x": 10, "y": 0 }
         //             }
         //         }
         //     },
         //     {
         //         "question": "Do you like pizza?",
         //         "points": {
-        //             "yes": {"x": 0, "y": 10},
-        //             "no": {"x": 10, "y": 0}
+        //             "yes": { "x": 8, "y": 5 },
+        //             "no": { "x": 2, "y": 1 }
         //         }
-        //     },
-        //   {
-        //         "question": "bitch",
+        //     }
+        // ];
+
+        // // Portuguese questions
+        // const questionspt = [
+        //     {
+        //         "question": "Você gosta de sorvete?",
         //         "points": {
-        //             "yes": {"x": 0, "y": 10},
-        //             "no": {"x": 10, "y": 0}
+        //             "yes": { "x": 0, "y": 10 },
+        //             "no": { "x": 10, "y": 0 }
         //         },
         //         "subquestion": {
-        //             "question": "asshole",
+        //             "question": "Prefere sabor de chocolate?",
         //             "points": {
-        //                 "yes": {"x": 0, "y": 10},
-        //             "no": {"x": 10, "y": 0}
+        //                 "yes": { "x": 0, "y": 10 },
+        //                 "no": { "x": 10, "y": 0 }
         //             }
         //         }
         //     },
+        //     {
+        //         "question": "Você gosta de pizza?",
+        //         "points": {
+        //             "yes": { "x": 8, "y": 5 },
+        //             "no": { "x": 2, "y": 1 }
+        //         }
+        //     }
         // ];
 
         let currentIndex = 0;
         let totalPoints = { x: 0, y: 0 };
+        let currentQuestions = [];
 
         const questionContainer = document.getElementById('questionnaire');
         const questionText = document.getElementById('question-text');
@@ -109,25 +123,47 @@
         const noButton = document.getElementById('no-btn');
         const resultContainer = document.getElementById('result');
 
+        // Load the initial language selection question
+        function loadLanguageSelection() {
+            questionText.textContent = "Choose a language / Escolha um idioma";
+            yesButton.textContent = "English";
+            noButton.textContent = "Português";
+
+            yesButton.onclick = () => setLanguage('en');
+            noButton.onclick = () => setLanguage('pt');
+        }
+
+        // Set the language and load the first question
+        function setLanguage(language) {
+            if (language === 'en') {
+                currentQuestions = questions;
+            } else {
+                currentQuestions = questionspt;
+            }
+            currentIndex = 0;
+            loadQuestion(currentIndex);
+        }
+
         // Load the main question at the given index
         function loadQuestion(index) {
-            const currentQuestion = questions[index];
+            const currentQuestion = currentQuestions[index];
             questionText.textContent = currentQuestion.question;
 
             // Set event listeners for main question
+            yesButton.textContent = "Yes";
+            noButton.textContent = "No";
             yesButton.onclick = () => handleAnswer('yes', currentQuestion);
             noButton.onclick = () => handleAnswer('no', currentQuestion);
         }
 
         // Show result with graph
         function showResult() {
-            console.log(totalPoints);
             questionContainer.style.display = 'none';
             resultContainer.style.display = 'block';
 
             const ctx = document.getElementById('resultChart').getContext('2d');
             new Chart(ctx, {
-                type: 'scatter',  // You can also choose other types, like 'scatter'
+                type: 'scatter',
                 data: {
                     datasets: [{
                         label: 'Your Point',
@@ -137,103 +173,27 @@
                         }],
                         backgroundColor: 'rgba(75, 192, 192, 1)',
                         borderColor: 'rgba(75, 192, 192, 1)',
-
+                        pointRadius: 10
                     }]
                 },
                 options: {
-                    responsive: true,
                     scales: {
                         x: {
-                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            position: 'bottom',
-                            min: -18,
-                            max: 18,
-                            ticks: {
-                                callback: function (value, index, ticks) {
-                                    // Custom names for specific positions
-                                    if (value === 0) {
-                                        return 'Freedom';
-                                    } else if (value === 18) {
-                                return '';
-                            } else if (value === -18) {
-                                return 'Anarquist';
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'X Points'
                             }
-                            return '';  // Return empty string for other ticks
-                                }
-                            },
-                            grid: {
-                                color: function (context) {
-                                    return context.tick.value === 0 ? 'rgba(0, 0, 0, 1)' : 'rgba(0, 0, 0, 0.1)';  // Highlight the 0 line
-                                },
-                                lineWidth: function (context) {
-                                    return context.tick.value === 0 ? 2 : 1;  // Thicker line at 0
-                                }
-                            }
-
                         },
                         y: {
-                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            position: 'right',
-
-                            min: -27,
-                            max: 35,
-                            ticks: {
-                                callback: function (value, index, ticks) {
-                                    // Custom names for specific positions
-                                    if (value === 0) {
-                                        return 'Right';
-                                    } return ''}
-                            }
-                        },
-                        y2: {
-                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            position: 'left',
-                            min: -27,
-                            max: 35,
-                            ticks: {
-                                callback: function (value, index, ticks) {
-                                    // Custom names for specific positions
-                                    if (value === 0) {
-                                        return 'Left';
-                                    } return ''}
-                            },
-                            grid: {
-                                color: function (context) {
-                                    return context.tick.value === 0 ? 'rgba(0, 0, 0, 1)' : 'rgba(0, 0, 0, 0.1)';  // Highlight the 0 line
-                                },
-                                lineWidth: function (context) {
-                                    return context.tick.value === 0 ? 2 : 1;  // Thicker line at 0
-                                }
-                            }
-                        },
-                        x2: {
-                            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                            position: 'top',
-                            min: -18,
-                            max: 18,
-                            ticks: {
-                                callback: function (value, index, ticks) {
-                                    // Custom names for specific positions
-                                    if (value === 0) {
-                                        return 'Autoritary';
-                                    } else if (value === 18) {
-                                return 'Facist';
-                            } else if (value === -18) {
-                                return 'Comunist';
-                            };  // Return empty string for other ticks
-                                return ''}
-                            },
-                            grid: {
-                                color: function (context) {
-                                    return context.tick.value === 0 ? 'rgba(0, 0, 0, 1)' : 'rgba(0, 0, 0, 0.1)';  // Highlight the 0 line
-                                },
-                                lineWidth: function (context) {
-                                    return context.tick.value === 0 ? 2 : 1;  // Thicker line at 0
-                                }
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Y Points'
                             }
                         }
                     }
-                },
+                }
             });
         }
 
@@ -251,7 +211,7 @@
 
             // Proceed to the next question
             currentIndex++;
-            if (currentIndex < questions.length) {
+            if (currentIndex < currentQuestions.length) {
                 loadQuestion(currentIndex);
             } else {
                 showResult();
@@ -275,15 +235,15 @@
 
             // After subquestion, load the next main question
             currentIndex++;
-            if (currentIndex < questions.length) {
+            if (currentIndex < currentQuestions.length) {
                 loadQuestion(currentIndex);
             } else {
                 showResult();
             }
         }
 
-        // Initialize the first question
-        loadQuestion(currentIndex);
+        // Initialize the first question as language selection
+        loadLanguageSelection();
     </script>
 
 </body>

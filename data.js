@@ -26,7 +26,7 @@ var questions = [
         }
     },
     {
-        "question": "Individuals have the right to choose whether to have an abortion based on their personal circumstances?",
+        "question": "Individuals have the right to choose whether to have an abortion?",
         "points": {
             "yes": {
                 "x": -1,
@@ -78,7 +78,7 @@ var questions = [
         }
     },
     {
-        "question": "Fairness and justice should be upheld in personal disputes and accusations, ensuring equal treatment for all parties?",
+        "question": "Fairness and justice should be upheld in personal disputes and accusations, ensuring equal treatment for all parties even know criminals, also no death penalty?",
         "points": {
             "yes": {
                 "x": -1,
@@ -91,7 +91,7 @@ var questions = [
         }
     },
     {
-        "question": "Given your stance, should the government enforce and maintain the justice system?",
+        "question": "Should the government be responsible for maintaining and enforcing the justice system, based on your opinion previous view on fairness and justice?",
         "points": {
             "yes": {
                 "x": 0,
@@ -130,7 +130,7 @@ var questions = [
         }
     },
     {
-        "question": "Society should take active steps to address racial inequality and support diversity in communities or workplaces?",
+        "question": "Should society push companies to adopt diversity quotas and redirect resources to social programs to address historical and societal inequalities?",
         "points": {
             "yes": {
                 "x": -1,
@@ -142,7 +142,7 @@ var questions = [
             }
         },
         "subquestion": {
-            "question": "Should the government be responsible for enforcing measures to ensure racial equality and diversity?",
+            "question": "Should the government mandate companies to implement diversity quotas and redirect tax revenues to fund social programs aimed at addressing historical and societal inequalities?",
             "points": {
                 "yes": {
                     "x": 0,
@@ -156,7 +156,7 @@ var questions = [
         }
     },
     {
-        "question": "Shose who are wealthier should contribute more to societal needs?",
+        "question": "Those who are wealthier should contribute monetary to societal needs?",
         "points": {
             "yes": {
                 "x": -1,
@@ -195,7 +195,7 @@ var questions = [
         }
     },
     {
-        "question": "Should the government implement laws regulating huting?",
+        "question": "Should the government implement laws regulating hunting?",
         "points": {
             "yes": {
                 "x": 0,
@@ -208,7 +208,7 @@ var questions = [
         }
     },
     {
-        "question": "Police resources should be reduced and redirected toward community services like mental health care?",
+        "question": "Reallocating Police Resources for Targeted Community Services like Substance Abuse Treatment Programs.?",
         "points": {
             "yes": {
                 "x": -1,
@@ -220,7 +220,7 @@ var questions = [
             }
         },
         "subquestion": {
-            "question": "Should the government shift public funding from policing to community-based services?",
+            "question": "Should the government shift public funding from policing to community-based services like Youth Development Programs?",
             "points": {
                 "yes": {
                     "x": 0,
@@ -286,7 +286,7 @@ var questions = [
         }
     },
     {
-        "question": "Parents should have the right to educate their children at home according to their personal values and beliefs?",
+        "question": "Parents should have the right to homeschool children according to their personal values and beliefs?",
         "points": {
             "yes": {
                 "x": 1,
@@ -403,7 +403,7 @@ var questions = [
         }
     },
     {
-        "question": "Should the government allow or mandate religious education in schools or public institutions?",
+        "question": "Should the government deny or mandate religious education in schools or public institutions?",
         "points": {
             "yes": {
                 "x": 0,
